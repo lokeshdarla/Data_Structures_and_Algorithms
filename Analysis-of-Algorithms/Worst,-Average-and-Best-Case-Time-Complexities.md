@@ -11,8 +11,7 @@ We can have three cases to analyze an algorithm:
 3. Best Case
 
 Below is the algorithm for performing a linear search:
-'''
-// Linearly search x in arr[]. 
+'''// Linearly search x in arr[]. 
 // If x is present then return the index,
 // otherwise return -1
 int search(int arr[], int n, int x)
@@ -50,8 +49,7 @@ Summary:
 ### Example:
 
 In C++:
-'''
-#include <bits/stdc++.h>
+'''#include <bits/stdc++.h>
 using namespace std;
 
 // Linearly search x in arr[].
@@ -79,7 +77,8 @@ int main()
         << search(arr, n, x);
 
    return 0;
-}'''
+}
+'''
 
 In Java:
 '''import java.util.Scanner;
@@ -111,7 +110,8 @@ public class linearsearch {
         }
         return -1; // Return -1 if the key is not found
     }
-}'''
+}
+'''
 **Time Complexity Analysis: (In Big-O notation)**
 
 - **Best Case:** O(1), ****This will take place if the element to be searched is on the first index of the given list. So, the number of comparisons, in this case, is 1.
