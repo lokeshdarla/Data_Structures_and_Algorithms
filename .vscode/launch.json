@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "OOPS",
+      "request": "launch",
+      "mainClass": "OOPS",
+      "projectName": "Dsa_aec1d162"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
