@@ -5,12 +5,15 @@ public class Main {
     Trie trie = new Trie();
 
     trie.insert("apple");
-    System.out.println(trie.search("apple")); // Output: true
-    System.out.println(trie.search("app")); // Output: false
-    System.out.println(trie.startsWith("app")); // Output: true
+    trie.insert("apple");
+    trie.insert("app");
 
-    trie.insert("abcde");
-    System.out.println(trie.search("app")); // Output: true
-    System.out.println(trie.startsWith("ab")); // Output: true
+    System.out.println(trie.countWordsEqualTo("apple")); // Output: 2
+    System.out.println(trie.countWordsStartingWith("app")); // Output: 3
+    System.out.println(trie.countWordsEqualTo("app")); // Output: 1
+
+    trie.erase("apple");
+    System.out.println(trie.countWordsEqualTo("apple")); // Output: 1
+    System.out.println(trie.countWordsStartingWith("app")); // Output: 2
   }
 }

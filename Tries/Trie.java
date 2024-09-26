@@ -2,7 +2,8 @@ package Tries;
 
 class Node {
   Node links[] = new Node[26];
-  Boolean flag = false;
+  int countWordsEqual = 0;
+  int countWordsPrefix = 0;
 
   public Node() {
   }
@@ -19,12 +20,28 @@ class Node {
     links[ch - 'a'] = node;
   }
 
-  void setEnd() {
-    flag = true;
+  void increasePrefix() {
+    countWordsPrefix++;
   }
 
-  Boolean isEnd() {
-    return flag;
+  void increaseEnd() {
+    countWordsEqual++;
+  }
+
+  void decreasePrefix() {
+    countWordsPrefix--;
+  }
+
+  void decreaseEnd() {
+    countWordsEqual--;
+  }
+
+  int getPrefixCount() {
+    return countWordsPrefix;
+  }
+
+  int getEndCount() {
+    return countWordsEqual;
   }
 }
 
@@ -39,38 +56,50 @@ public class Trie {
     Node node = root;
     for (int i = 0; i < word.length(); i++) {
       char ch = word.charAt(i);
-
       if (!node.isContainsKey(ch)) {
         node.put(ch, new Node());
       }
-
       node = node.getChar(ch);
+      node.increasePrefix();
     }
-
-    node.setEnd();
+    node.increaseEnd();
   }
 
-  public boolean search(String word) {
+  public int countWordsEqualTo(String word) {
     Node node = root;
     for (int i = 0; i < word.length(); i++) {
       char ch = word.charAt(i);
       if (!node.isContainsKey(ch)) {
-        return false;
+        return 0;
       }
       node = node.getChar(ch);
     }
-    return node.isEnd();
+    return node.getEndCount();
   }
 
-  public boolean startsWith(String prefix) {
+  public int countWordsStartingWith(String prefix) {
     Node node = root;
     for (int i = 0; i < prefix.length(); i++) {
       char ch = prefix.charAt(i);
       if (!node.isContainsKey(ch)) {
-        return false;
+        return 0;
       }
       node = node.getChar(ch);
     }
-    return true;
+    return node.getPrefixCount();
+  }
+
+  public void erase(String word) {
+    Node node = root;
+    for (int i = 0; i < word.length(); i++) {
+      char ch = word.charAt(i);
+      if (node.isContainsKey(ch)) {
+        node = node.getChar(ch);
+        node.decreasePrefix();
+      } else {
+        return;
+      }
+    }
+    node.decreaseEnd();
   }
 }
