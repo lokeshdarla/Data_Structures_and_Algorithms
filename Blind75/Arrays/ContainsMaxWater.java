@@ -1,3 +1,5 @@
+package Blind75.Arrays;
+
 public class ContainsMaxWater {
 
   static int containsMaxWater(int nums[]) {

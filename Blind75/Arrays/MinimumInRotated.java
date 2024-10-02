@@ -1,3 +1,5 @@
+package Blind75.Arrays;
+
 public class MinimumInRotated {
 
   static int minimumInRotated(int nums[]) {

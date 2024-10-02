@@ -1,3 +1,5 @@
+package Blind75.Arrays;
+
 public class MaxSubArray {
 
   static int maxSubArray(int nums[]) {

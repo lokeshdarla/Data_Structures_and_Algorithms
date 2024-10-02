@@ -1,3 +1,5 @@
+package Blind75.Arrays;
+
 public class ProductExceptSelf {
   static int[] productExceptSelf(int nums[]) {
     int n = nums.length;

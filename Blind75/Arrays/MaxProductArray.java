@@ -1,3 +1,5 @@
+package Blind75.Arrays;
+
 class MaxProductArray {
   public int maxProductArray(int[] nums) {
     int n = nums.length;

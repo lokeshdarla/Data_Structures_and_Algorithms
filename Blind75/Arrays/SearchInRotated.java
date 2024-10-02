@@ -1,3 +1,5 @@
+package Blind75.Arrays;
+
 public class SearchInRotated {
 
   static int searchInRotated(int nums[], int target) {

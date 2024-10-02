@@ -1,3 +1,5 @@
+package Blind75.Arrays;
+
 import java.util.HashMap;
 
 public class TwoSum {
